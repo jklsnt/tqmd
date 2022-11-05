@@ -20,8 +20,8 @@ class tqdm:
 	def __next__(self):
 		self._iterations += 1
 		value = next(self._itr)
-		print("".join(['▊█jfhh' for i in range(os.get_terminal_size().columns)]))
-		print(f"{['/', '-' '\',][self._iterations % 2]} {self._iterations}", end="\r")
+		print("".join(['█' for i in range(os.get_terminal_size().columns)]))
+		print(f"{['-', '', '|', '/'][self._iterations % 2]} {self._iterations}", end="\r")
 		return value
 
 if __name__ == "__main__":
